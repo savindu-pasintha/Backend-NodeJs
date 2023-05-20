@@ -27,7 +27,12 @@ const TodoSchema = new Schema({
       type: String,
     },
   ],
-  user: { type: Schema.Types.ObjectId, ref: 'User' }, // Reference to the user who owns the todo
+  userId: { type: Number, ref: 'user', required: true, }, 
+  /*
+   Reference to the user who owns the todo 
+   Its same as RDMS foriegn key
+   userId==user document user's email. because its uniq feild
+  */
 });
 
 TodoSchema.plugin(autoIncrement.plugin, {

@@ -45,7 +45,7 @@ mongoose
 const db = mongoose.connection;
 db.on("error", console.error.bind(console, "connection error: "));
 db.once("open", function () {
-  console.log("mongodb databse Connected successfully");
+  console.log("mongodb database Connected successfully");
 });
 
 app.listen(process.env.PORT, () => {

@@ -4,7 +4,7 @@ import UserModel from "../model/userModelSchema.js";
 import jwt from 'jsonwebtoken'
 
 
-export const getUserRegistrationController = (req, res) =>{
+export const userRegistrationController = (req, res) =>{
  try {
    const { email, password } = req.body;
    const userData = { email: btoa(email), password: btoa(password) };
@@ -27,7 +27,7 @@ export const getUserRegistrationController = (req, res) =>{
  }
 }
 
-export const getUserLoginController = (req, res) =>{  
+export const userLoginController = (req, res) =>{  
   try {
     const { email, password } = req.body;
     const userData = { email: btoa(email), password: btoa(password) };
