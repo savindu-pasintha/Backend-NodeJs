@@ -8,7 +8,6 @@ import bodyParser from 'body-parser'
 import cookieParser from 'cookie-parser'
 import dotenv from 'dotenv';
 
-import { jwtAuthMiddleware } from './middleware/jwtAuthMiddleware.js';
 import homeRouter from './routers/homeRouter.js';
 import todoRouter from './routers/todoRouter.js';
 import userRouter from './routers/userRouter.js';

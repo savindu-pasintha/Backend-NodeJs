@@ -1,5 +1,5 @@
 import TodoModel from "../model/todoModelSchema.js";
-import mongoose from "mongoose";
+
 
 export const getTodosController = (req, res) => {
   try {
