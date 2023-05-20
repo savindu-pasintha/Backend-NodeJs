@@ -1,4 +1,8 @@
+install project : npm install   
 start server : npm run dev
+![image](https://github.com/savindu-pasintha/Backend-NodeJs/assets/64083148/8740d2be-8bca-438f-aeff-f6223944b3ae)
+![image](https://github.com/savindu-pasintha/Backend-NodeJs/assets/64083148/ea668c3e-08f7-4c5e-866e-f4603c8dcb2a)
+
 
 export const name;  or export {name}
 import {name} from 'file'
