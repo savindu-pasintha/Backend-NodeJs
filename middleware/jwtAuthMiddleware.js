@@ -11,7 +11,7 @@ export const jwtAuthMiddleware = (req, res, next) => {
     ) {
       token = req.headers["token"];
     } else if (authHeader) {
-      token = authHeader.split(" ")[1];//Bearer token
+      token = authHeader.split(" ")[1];//check Bearer header.payload.signature
     }
     if (token) {
       jwt.verify(token, process.env.JWT_SECRET_KEY, (err, user) => {
