@@ -4,6 +4,27 @@ import UserModel from "../model/userModelSchema.js";
 import jwt from 'jsonwebtoken'
 
 
+export const getUsersController = (req, res) => {
+  try {
+    UserModel.find({}, (err, data) => {
+      if (err) {
+        res
+          .status(200)
+          .json({ msg: "Error in mongodb server", error: err, data: data });
+      } else {
+        res.status(200).json({ msg: "yes", error: err, data: data });
+      }
+    });
+  } catch (error) {
+    res.status(500).json({
+      token: null,
+      error: error,
+      data: null,
+      msg: "Inernal Server Error",
+    });
+  }
+};
+
 export const userRegistrationController = (req, res) =>{
  try {
    const { email, password } = req.body;
@@ -45,4 +66,31 @@ export const userLoginController = (req, res) =>{
     res.status(500).json({ token: null,  error: error, data: null , msg: "Inernal Server Error" });
   }
 }
+
+export const userDeleteController = (req, res) => {
+  try {
+    const { email } = req.params;
+    const todoData = {  email: btoa(email) };
+    UserModel.findOneAndDelete(todoData, (err, data) => {
+      if (err) {
+        res.status(400).json({
+          token: null,
+          msg: "Error in mongodb server",
+          data: data,
+          error: err,
+        });
+      } else {
+        res
+          .status(data ? 200 : 404)
+          .json({ error: null, data: data, msg: data ? "ok" : `${JSON.stringify(todoData)} document not found for delete`, error: err });
+      }
+    });
+  } catch (error) {
+    res.status(500).json({
+      error:error,
+      data: null,
+      msg: "Inernal Server Error",
+    });
+  }
+};
 
