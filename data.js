@@ -1,4 +1,4 @@
- const data = [{
+ export const data = [{
     id: 1,
     heading: 'First Blog Post',
     date: '2022-05-01',
@@ -20,4 +20,3 @@
     author: 'John Smith'
   }];
 
-  module.exports = {data}
