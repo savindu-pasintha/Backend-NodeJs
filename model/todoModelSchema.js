@@ -11,7 +11,7 @@ const TodoSchema = new Schema({
   },
   description: {
     type: String,
-    required: true,
+    default: '',
   },
   createdAt: {
     type: Date,
@@ -27,6 +27,7 @@ const TodoSchema = new Schema({
       type: String,
     },
   ],
+  user: { type: Schema.Types.ObjectId, ref: 'User' }, // Reference to the user who owns the todo
 });
 
 TodoSchema.plugin(autoIncrement.plugin, {

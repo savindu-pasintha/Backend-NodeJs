@@ -3,13 +3,13 @@
 import express from 'express'
 
 import { jwtAuthMiddleware } from '../middleware/jwtAuthMiddleware.js';
-import { getUserLoginData, getUserRegistrationData } from '../controllers/userController.js';
+import { getUserLoginController, getUserRegistrationController} from '../controllers/userController.js';
 
 
 const userRouter = express.Router();
 
-userRouter.post('/login', jwtAuthMiddleware,getUserLoginData);
-userRouter.post('/reg', getUserRegistrationData);
+userRouter.post('/reg', getUserRegistrationController);
+userRouter.post('/login',getUserLoginController);
 
 export default  userRouter
 

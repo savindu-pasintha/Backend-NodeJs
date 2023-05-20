@@ -11,7 +11,7 @@ export const jwtAuthMiddleware = (req, res, next) => {
     ) {
       token = req.headers["token"];
     } else if (authHeader) {
-      token = authHeader.split(" ")[1];
+      token = authHeader.split(" ")[1];//Bearer token
     }
     if (token) {
       jwt.verify(token, process.env.JWT_SECRET_KEY, (err, user) => {
@@ -25,9 +25,6 @@ export const jwtAuthMiddleware = (req, res, next) => {
       res.status(401).json({ message: "Unauthorized" });
     }
   } catch (error) {
-    console.error(error);
-    res
-      .status(500)
-      .json({ error: error, msg: "Inernal Server Error" });
+    res.status(500).json({ error: error, msg: "Inernal Server Error" });
   }
 };
