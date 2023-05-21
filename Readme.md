@@ -2,8 +2,8 @@
 # connect with  atlas mongodb cloud
 # replace the .env MONGODB_CONNECTION_URL
 # start server : npm run dev | npm start
-
-I refered this article for the terraform deployment in aws : https://earthly.dev/blog/deploy-dockcontainers-to-awsecs-using-terraform/
+# check http://localhost:5000
+### I refered this article for the terraform deployment in aws : https://earthly.dev/blog/deploy-dockcontainers-to-awsecs-using-terraform/
 ![image](https://github.com/savindu-pasintha/Backend-NodeJs/assets/64083148/8740d2be-8bca-438f-aeff-f6223944b3ae)
 ![image](https://github.com/savindu-pasintha/Backend-NodeJs/assets/64083148/ea668c3e-08f7-4c5e-866e-f4603c8dcb2a)
 
