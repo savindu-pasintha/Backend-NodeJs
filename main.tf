@@ -12,8 +12,9 @@ terraform {
 provider "aws" {
   region  = "us-east-1" #The region where the environment 
   #is going to be deployed # Use your own region here
-  access_key = "AKIA2OPTEDEYD3XO6Q7W" # Enter AWS IAM 
-  secret_key = "CHDjqNYOPPzk4GT+Pr21oBS2KwoJKF1qaE7M4UmE" # Enter AWS IAM 
+  AKIA2OPTEDEYD3XO6Q7W%CHDjqNYOPPzk4GT+Pr21oBS2KwoJKF1qaE7M4UmE
+  access_key = "" # Enter AWS IAM 
+  secret_key = "" # Enter AWS IAM 
 }
 
 # 3 - create an ECR - elastic container registry using Terraform as follows
